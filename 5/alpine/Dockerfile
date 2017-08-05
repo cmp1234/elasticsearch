@@ -65,8 +65,8 @@ RUN set -ex; \
 
 #VOLUME /usr/share/elasticsearch/data
 
-COPY docker-entrypoint.sh /
+#COPY docker-entrypoint.sh /
 
 EXPOSE 9200 9300
-ENTRYPOINT ["/docker-entrypoint.sh"]
+#ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["elasticsearch"]
