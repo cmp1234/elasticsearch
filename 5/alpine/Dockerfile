@@ -41,7 +41,7 @@ RUN set -ex; \
 		rm -rf "$GNUPGHOME" elasticsearch.tar.gz.asc; \
 	fi; \
 	\
-	tar -xvf elasticsearch.tar.gz --strip-components=1; && ls -l\
+	tar -xvf elasticsearch.tar.gz --strip-components=1; ls -l; \
 	rm elasticsearch.tar.gz; \
 	\
 	apk del .fetch-deps; \
