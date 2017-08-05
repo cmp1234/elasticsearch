@@ -58,14 +58,14 @@ RUN set -ex; \
 	done; \
 	\
 # we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
-	export ES_JAVA_OPTS='-Xms32m -Xmx32m'; \
+	export ES_JAVA_OPTS='-Xms32m -Xmx32m'; 
 	#/usr/share/elasticsearch/bin/elasticsearch-plugin install x-pack; \
 
-#COPY config ./config
+COPY config ./config
 
-#VOLUME /usr/share/elasticsearch/data
+VOLUME /usr/share/elasticsearch/data
 
-#COPY docker-entrypoint.sh /
+COPY docker-entrypoint.sh /
 
 EXPOSE 9200 9300
 #ENTRYPOINT ["/docker-entrypoint.sh"]
