@@ -61,7 +61,7 @@ RUN set -ex; \
 	export ES_JAVA_OPTS='-Xms32m -Xmx32m'; \
 	#/usr/share/elasticsearch/bin/elasticsearch-plugin install x-pack; \
 
-COPY config ./config
+#COPY config ./config
 
 VOLUME /usr/share/elasticsearch/data
 
