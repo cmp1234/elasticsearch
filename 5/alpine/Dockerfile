@@ -59,7 +59,7 @@ RUN set -ex; \
 	\
 # we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
 	export ES_JAVA_OPTS='-Xms32m -Xmx32m'; 
-	#/usr/share/elasticsearch/bin/elasticsearch-plugin install x-pack; \
+	elasticsearch-plugin install x-pack; 
 
 COPY config ./config
 
