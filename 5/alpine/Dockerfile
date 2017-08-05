@@ -5,7 +5,7 @@ RUN addgroup -S elasticsearch && adduser -S -G elasticsearch elasticsearch
 
 # grab su-exec for easy step-down from root
 # and bash for "bin/elasticsearch" among others
-RUN apk add --no-cache 'su-exec>=0.2'
+RUN apk add --no-cache 'su-exec>=0.2' readline 
 
 # https://artifacts.elastic.co/GPG-KEY-elasticsearch
 ENV GPG_KEY 46095ACC8548582C1A2699A9D27D666CD88E42B4
