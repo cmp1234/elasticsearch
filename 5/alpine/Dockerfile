@@ -60,13 +60,6 @@ RUN set -ex; \
 # we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
 	export ES_JAVA_OPTS='-Xms32m -Xmx32m'; \
 	#/usr/share/elasticsearch/bin/elasticsearch-plugin install x-pack; \
-	if [ "${ELASTICSEARCH_VERSION%%.*}" -gt 1 ]; then \
-		elasticsearch --version; \
-	else \
-# elasticsearch 1.x doesn't support --version
-# but in 5.x, "-v" is verbose (and "-V" is --version)
-		elasticsearch -v; \
-	fi
 
 COPY config ./config
 
