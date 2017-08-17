@@ -54,7 +54,8 @@ RUN set -ex; \
 	; do \
 		mkdir -p "$path"; \
 		chown -R elasticsearch:elasticsearch "$path"; \
-	done; 
+	done; \
+	sed -i 's/022/027/g' /etc/profile;
 	#\
 	#elasticsearch-plugin install x-pack; 
 # we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
