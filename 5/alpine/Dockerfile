@@ -1,7 +1,7 @@
 FROM cmp1234/java:security-latest-alpine3.6
 
 # ensure elasticsearch user exists
-RUN addgroup -S -g 18345 elasticsearch && adduser -S -G elasticsearch -u 18345 elasticsearch
+#RUN addgroup -S -g 18345 elasticsearch && adduser -S -G elasticsearch -u 18345 elasticsearch
 
 # grab su-exec for easy step-down from root
 # and bash for "bin/elasticsearch" among others
@@ -53,7 +53,7 @@ RUN set -ex; \
 		./config/scripts \
 	; do \
 		mkdir -p "$path"; \
-		chown -R elasticsearch:elasticsearch "$path"; \
+		chown -R cmp:cmp "$path"; \
 	done; \
 	sed -i 's/022/027/g' /etc/profile;
 	#\
