@@ -15,10 +15,10 @@ if [ "$1" = 'elasticsearch' -a "$(id -u)" = '0' ]; then
 		/usr/share/elasticsearch/data \
 		/usr/share/elasticsearch/logs \
 	; do
-		chown -R elasticsearch:elasticsearch "$path"
+		chown -R cmp:cmp "$path"
 	done
 	
-	set -- su-exec elasticsearch "$@"
+	set -- su-exec cmp "$@"
 	#exec su-exec elasticsearch "$BASH_SOURCE" "$@"
 fi
 
