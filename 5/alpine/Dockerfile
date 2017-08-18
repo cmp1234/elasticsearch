@@ -55,7 +55,10 @@ RUN set -ex; \
 		mkdir -p "$path"; \
 		chown -R cmp:cmp "$path"; \
 	done; \
-	sed -i 's/022/027/g' /etc/profile;
+	sed -i 's/022/027/g' /etc/profile; \
+	echo 'umask 027' > /home/cmp/.bashrc; \
+	chown cmp:cmp /home/cmp/.bashrc; \
+	echo 'umask 027' > /root/.bashrc; 
 	#\
 	#elasticsearch-plugin install x-pack; 
 # we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
