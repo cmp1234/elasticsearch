@@ -2,6 +2,7 @@
 
 set -e
 
+umask 027
 # Add elasticsearch as command if needed
 if [ "${1:0:1}" = '-' ]; then
 	set -- elasticsearch "$@"
@@ -22,7 +23,6 @@ if [ "$1" = 'elasticsearch' -a "$(id -u)" = '0' ]; then
 	#exec su-exec elasticsearch "$BASH_SOURCE" "$@"
 fi
 
-umask 027
 # As argument is not related to elasticsearch,
 # then assume that user wants to run his own process,
 # for example a `bash` shell to explore this image
