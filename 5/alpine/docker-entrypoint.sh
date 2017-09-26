@@ -2,7 +2,7 @@
 
 set -e
 
-umask 027
+umask 077
 # Add elasticsearch as command if needed
 if [ "${1:0:1}" = '-' ]; then
 	set -- elasticsearch "$@"
