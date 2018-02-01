@@ -1,4 +1,4 @@
-FROM cmp1234/java:security-latest-alpine3.6
+FROM cmp1234/jre-allinone:with-ansible
 
 # ensure elasticsearch user exists
 #RUN addgroup -S -g 18345 elasticsearch && adduser -S -G elasticsearch -u 18345 elasticsearch
